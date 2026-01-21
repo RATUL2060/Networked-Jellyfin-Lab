@@ -78,3 +78,8 @@ This is not a copy-paste tutorial project.
 
 It is a problem-driven learning log, very similar to how issues are identified, tested, and solved in real NOC and ISP environments.
 
+## 🧩 Architecture:
+
+![Secure Jellyfin Architecture](architecture.png)
+
+
