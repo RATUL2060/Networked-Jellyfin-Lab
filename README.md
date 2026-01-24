@@ -198,6 +198,6 @@ Jellyfin is now accessible securely via:
 
   * Encrypted (HTTPS)
 
- * Terminated at Caddy
+  * Terminated at Caddy
 
- * Safely forwarded to Jellyfin running on a local private IP
+  * Safely forwarded to Jellyfin running on a local private IP
