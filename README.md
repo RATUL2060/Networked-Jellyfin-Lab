@@ -243,13 +243,13 @@ Using Docker meant:
 
 * Predictable and repeatable configuration
 
-### 🧱 Introducing Nginx Proxy Manager
+### *🧱 Introducing Nginx Proxy Manager:*
 
 Instead of configuring raw Nginx manually, I chose:
 
 → Nginx Proxy Manager
 
-###⚙️ How It Was Deployed
+### *⚙️ How It Was Deployed:*
 
 * Docker Desktop was installed and running
 
