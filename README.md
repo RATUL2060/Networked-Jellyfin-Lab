@@ -129,7 +129,7 @@ A reverse proxy is a service that sits in front of an application and acts as an
 
 ![Localreverse-proxy](reverse-proxy.png)
 
-### *🔐 Why HTTPS (SSL/TLS) Is Critical:*
+### 🔐 *Why HTTPS (SSL/TLS) Is Critical:*
 
 Serving Jellyfin over HTTP means:
 
@@ -149,7 +149,7 @@ HTTPS solves this by:
 
 Modern HTTPS relies on SSL/TLS certificates
 
-### *⚙️ What I Tried:*
+### ⚙️ *What I Tried:*
 
 At this stage, I experimented with using a reverse proxy in front of Jellyfin:
 
@@ -171,7 +171,7 @@ This immediately improved the security posture:
 
 * Access was routed through a single controlled entry point
 
-### *🖥️ Caddy Reverse Proxy:*
+### 🖥️ *Caddy Reverse Proxy:*
 
 ![LocalNetworkSetup](Caddy.png)
 
@@ -208,7 +208,7 @@ Jellyfin is now accessible securely via:
 
 ![Secure Jellyfin NSM-docker](NSM-docker.png)
 
-### *🐳 Why Docker?*
+### 🐳 *Why Docker?*
 
 Docker allows applications to run in isolated containers while sharing the host system’s resources.
 
@@ -221,7 +221,7 @@ Container → running instance of that blueprint
 Docker does not emulate hardware.
 It runs applications directly using the host’s CPU, memory, and storage.
 
-### *🔍 Why Docker Made Sense Here:*
+### 🔍 *Why Docker Made Sense Here:*
 
 * Reverse proxy software is typically Linux-based
 
@@ -243,13 +243,13 @@ Using Docker meant:
 
 * Predictable and repeatable configuration
 
-### *🧱 Introducing Nginx Proxy Manager:*
+### 🧱 *Introducing Nginx Proxy Manager:*
 
 Instead of configuring raw Nginx manually, I chose:
 
 → Nginx Proxy Manager
 
-### *⚙️ How It Was Deployed:*
+### ⚙️ *How It Was Deployed:*
 
 * Docker Desktop was installed and running
 
