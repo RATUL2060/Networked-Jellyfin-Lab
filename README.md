@@ -258,3 +258,36 @@ Instead of configuring raw Nginx manually, I chose:
 * Required ports were bound (80 / 443)
 
 * Data was persisted using Docker volumes
+
+## 📅 Cloudflare Tunnel:
+
+![Secure Jellyfin cloudflard](cloudflard.png)
+
+Cloudflare Tunnel creates an outbound, encrypted connection from your local machine to Cloudflare’s network.
+
+Instead of:
+
+* Opening ports on your router
+
+* Letting the internet connect into your home
+
+### ⚙️ What I Tested:
+
+* Created a Cloudflare Quick Tunnel
+
+* Exposed Jellyfin using a temporary Cloudflare URL
+
+* Verified access from:
+
+  * Mobile data
+
+  * External networks
+
+###⚠️ Limitations Discovered:
+
+→🔗 Temporary URLs
+
+* Quick Tunnels generate temporary domains
+
+* Not suitable for long-term use
+
