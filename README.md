@@ -309,7 +309,7 @@ Exposing these publicly increases attack surface unnecessarily.
 
 A VPN allows access as if the device were inside the home network, without exposing the service to the internet.
 
-###🧩 What Is WireGuard?
+### 🧩 *What Is WireGuard?*
 
 ![Secure Wireguard](Wireguard.png)
 
@@ -332,11 +332,11 @@ Unlike older VPNs, WireGuard uses:
 
 * Simple peer-based connections
 
-###🔁 *Traffic Flow:*
+### 🔁 *Traffic Flow:*
 
-![Secure Wireguard](Wireguard.png)
+![traffic](traffic.png)
 
-###⚙️ *How I Used It:*
+### ⚙️ *How I Used It:*
 
 WireGuard server was configured on the home router
 
