@@ -334,7 +334,8 @@ Unlike older VPNs, WireGuard uses:
 
 ### 🔁 *Traffic Flow:*
 
-![traffic](traffic.png)
+<img src="traffic.png" width="200" align="middle" />
+
 
 ### ⚙️ *How I Used It:*
 
