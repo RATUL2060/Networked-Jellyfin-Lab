@@ -285,7 +285,7 @@ Instead of:
 
 ### ⚠️ *Limitations Discovered:*
 
-→🔗 Temporary URLs
+🔗 Temporary URLs
 
 * Quick Tunnels generate temporary domains
 
@@ -382,3 +382,49 @@ The Cloud Hosted Router (CHR) version of RouterOS was used because:
 * Widely used for training and certification practice
 
 * Supports advanced features (PPP, VPN, QoS, Firewall, Routing)
+
+# 📅 PPTP (Site-to-Site VPN Basics):
+
+📌The objective of this lab is to understand the fundamentals of site-to-site VPN connectivity using PPTP (Point-to-Point Tunneling Protocol).
+
+→ This lab demonstrates how two separate private networks can communicate securely over the internet using a VPN tunnel
+
+### 🧩 *Lab Topology:*
+
+* One router acts as HQ (PPTP Server)
+
+* One router acts as Branch (PPTP Client)
+
+* Both routers run MikroTik RouterOS (CHR) in a virtual lab
+
+### ⚙️ *What Was Configured:*
+On the HQ Router (PPTP Server)
+
+* PPTP server enabled
+
+* PPP profile configuration
+
+* User authentication (PPP Secrets)
+
+* IP address assignment for tunnel interfaces
+
+On the Branch Router (PPTP Client)
+
+* PPTP client interface
+
+* Authentication credentials
+
+* Remote server connection
+
+* Routing to reach HQ network
+
+### 📂 *Configuration Files:*
+
+The following exported RouterOS configuration files are included:
+
+* HQ-pptp.rsc — PPTP server (HQ) configuration
+
+* Branch-pptp.rsc — PPTP client (Branch) configuration
+
+These files can be imported into RouterOS to reproduce the lab.
+
