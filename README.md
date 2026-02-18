@@ -482,3 +482,62 @@ The following exported RouterOS configuration files are included:
 
 These files can be imported directly into RouterOS for testing
 
+## 📅 SSTP (Secure VPN with Certificates)
+
+The objective of this lab is to configure a secure VPN connection using SSTP (Secure Socket Tunneling Protocol) and understand how certificate-based authentication enhances VPN security.
+
+
+
+![sstp](SSTP/sstp.JPG)
+
+This lab improves upon PPTP by introducing:
+
+* Strong encryption
+
+* HTTPS-based tunneling
+
+* Certificate validation
+  
+
+### 🧩 *Lab Topology:*
+
+One router acts as SSTP Server
+
+Remote client connects using SSTP over TCP 443
+
+Both routers run MikroTik RouterOS (CHR) in a virtual lab
+
+![SSTTunnel](SSTTunnel.png)
+
+Unlike PPTP, SSTP works over HTTPS (Port 443), making it firewall-friendly and secure.
+
+### ⚙️ *What Was Configured:*
+On the SSTP Server (RouterOS)
+
+* Created a Certificate Authority (CA)
+
+* Generated server certificate
+
+* Signed certificate using CA
+
+* Enabled SSTP server
+
+* Configured PPP profile
+
+* Created user authentication
+
+On the Client Side
+
+* Imported server certificate
+
+* Configured SSTP client
+
+* Provided authentication credentials
+
+* Established encrypted tunnel
+
+### 📂 *Configuration Files:*
+
+The following configuration file is included:
+
+* SSTP_configuration.rsc — SSTP server configuration
