@@ -507,7 +507,7 @@ Remote client connects using SSTP over TCP 443
 
 Both routers run MikroTik RouterOS (CHR) in a virtual lab
 
-![SSTTunnel](SSTTunnel.png)
+![SSTTunnel](SSTP/SSTPTunnel.png)
 
 Unlike PPTP, SSTP works over HTTPS (Port 443), making it firewall-friendly and secure.
 
