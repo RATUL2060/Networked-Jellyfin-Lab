@@ -8,7 +8,7 @@ While working in a Network Operations Center (NOC) at an ISP, I often found myse
 How do real-world services like FTP servers, media servers, and VPNs remain reachable and secure from anywhere on the internet, while most home services stay limited to private networks?
 
 Initially, I built my Jellyfin server only for local use.
-However, when I wanted to access it securely from my mobile device outside my home network, I realized this was the perfect opportunity to move beyond theory and truly understand real networking concepts in practice.
+However, I later wanted to watch movies during my free time at the office or while away from home. That’s when the idea of accessing my server securely from my mobile device outside my home network came to mind, I realized this was the perfect opportunity to move beyond theory and truly understand real networking concepts in practice.
 
 This project became a problem-driven learning journey, not just a media server setup.
 
