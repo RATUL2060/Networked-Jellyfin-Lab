@@ -541,3 +541,50 @@ On the Client Side
 The following configuration file is included:
 
 * SSTP_configuration.rsc — SSTP server configuration
+
+
+## 📅 Simple Queue & PCQ (Traffic Shaping & Fair Usage)
+
+
+The objective of this lab is to understand how bandwidth management and traffic shaping work using Simple Queues and PCQ (Per Connection Queue) in MikroTik.
+
+![Simple Queue](Simple%20queue/simple%20queue.JPG)
+
+This lab simulates how ISPs:
+
+* Control user bandwidth
+* Prevent network congestion
+* Ensure fair usage among multiple users
+
+### 🧩 Lab Topology
+* One router acts as the gateway/router
+* Multiple clients share the same internet connection
+* Traffic is controlled using queues
+
+All configurations were tested using MikroTik RouterOS (CHR) in a virtual lab.
+
+### ⚙️ What Was Configured
+🔹 Simple Queue
+* Bandwidth limits per user/device
+* Upload and download control
+* Target IP-based queue rules
+🔹 PCQ (Per Connection Queue)
+* Automatic bandwidth distribution
+* Fair sharing across multiple users
+* Dynamic allocation based on active connections
+🔹 Additional Settings
+* Queue types (PCQ upload/download)
+* Max limit configuration
+* Queue hierarchy (basic)
+
+### 📂 Configuration Files
+
+The following configuration files are included:
+
+→ simple queue R1.rsc  basic queue setup (Router 1)
+
+→ simple queue R2.rsc extended queue setup (Router 2)
+
+→ PCQ.rsc — PCQ configuration
+
+These files can be imported into RouterOS to replicate the lab.
