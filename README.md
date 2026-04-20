@@ -138,7 +138,7 @@ Increased risk of unauthorized access and brute-force attacks
 
 🔁 What Is a Reverse Proxy?
 
-A reverse proxy sits in front of backend services and handles incoming client requests, forwarding them internally. and acts as an intermediary between users and the backend service.
+A reverse proxy sits in front of backend services and handles incoming client requests, forwarding them internally as an intermediary between users and backend services.
 
 ![Localreverse-proxy](reverse-proxy.png)
 
@@ -228,7 +228,7 @@ Docker allows applications to run in isolated containers while sharing the host 
 * Docker was used to run Linux-based services on Windows (via WSL) in isolated containers.
   This allowed clean, reproducible deployment without using virtual machines.
 
-Docker does not emulate hardware.
+Docker does not emulate hardware; it runs applications directly using the host system’s resources.
 It runs applications directly using the host’s CPU, memory, and storage.
 
 ### 🔍 *Why Docker Made Sense Here:*
@@ -279,7 +279,7 @@ Instead of:
 
 * Opening ports on your router
 
-* Letting the internet connect into your home
+* Allowing inbound connections from the internet into your home network
 
 ### ⚙️ *What I Tested:*
 
@@ -304,10 +304,10 @@ Instead of:
 ## 🧭 Final Architecture Summary
 
 Public Access:
-* User → Cloudflare Tunnel / Reverse Proxy → Jellyfin (Docker) → Local Network
+User → Cloudflare Tunnel / Reverse Proxy → Jellyfin (Docker) → Local Network
 
 Private Access:
-* User → WireGuard VPN → Home Network → Jellyfin
+User → WireGuard VPN → Home Network → Jellyfin
 
 ## 📅 WireGuard VPN:
 
