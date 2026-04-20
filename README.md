@@ -1,4 +1,17 @@
-# 📌 Project Motivation:
+# 🚀 Project Overview:
+
+- Built a secure self-hosted Jellyfin media server
+- Implemented HTTPS using reverse proxy (Caddy / Nginx Proxy Manager)
+- Avoided port forwarding risks using Cloudflare Tunnel
+- Added private access using WireGuard VPN
+- Simulated ISP networking (PPPoE, VPN, QoS) using MikroTik RouterOS
+
+👉 Focus: Secure service exposure + real-world networking concepts
+
+
+
+
+## 📌 Project Motivation:
 
 I wanted to build a personal media server that I could access securely from anywhere, especially on my mobile device.
 While my computer is mainly used for work and learning, my phone is my primary device for entertainment. This naturally led me to explore Jellyfin as a self-hosted alternative to cloud streaming services.
@@ -8,7 +21,7 @@ While working in a Network Operations Center (NOC) at an ISP, I often found myse
 How do real-world services like FTP servers, media servers, and VPNs remain reachable and secure from anywhere on the internet, while most home services stay limited to private networks?
 
 Initially, I built my Jellyfin server only for local use.
-However, I later wanted to watch movies during my free time at the office or while away from home. That’s when the idea of accessing my server securely from my mobile device outside my home network came to mind, I realized this was the perfect opportunity to move beyond theory and truly understand real networking concepts in practice.
+However, I later wanted to watch movies during my free time at the office or while away from home. That’s when the idea of accessing my server securely from my mobile device outside my home network came to mind. I realized this was the perfect opportunity to move beyond theory and truly understand real networking concepts in practice.
 
 This project became a problem-driven learning journey, not just a media server setup.
 
@@ -125,7 +138,7 @@ Increased risk of unauthorized access and brute-force attacks
 
 🔁 What Is a Reverse Proxy?
 
-A reverse proxy is a service that sits in front of an application and acts as an intermediary between users and the backend service.
+A reverse proxy sits in front of backend services and handles incoming client requests, forwarding them internally. and acts as an intermediary between users and the backend service.
 
 ![Localreverse-proxy](reverse-proxy.png)
 
@@ -147,7 +160,7 @@ HTTPS solves this by:
 
 * Protecting credentials and streams
 
-Modern HTTPS relies on SSL/TLS certificates
+Modern HTTPS relies on TLS certificates (commonly referred to as SSL/TLS)
 
 ### ⚙️ *What I Tried:*
 
@@ -212,11 +225,8 @@ Jellyfin is now accessible securely via:
 
 Docker allows applications to run in isolated containers while sharing the host system’s resources.
 
-In simple terms:
-
-Image → blueprint of the application
-
-Container → running instance of that blueprint
+* Docker was used to run Linux-based services on Windows (via WSL) in isolated containers.
+  This allowed clean, reproducible deployment without using virtual machines.
 
 Docker does not emulate hardware.
 It runs applications directly using the host’s CPU, memory, and storage.
@@ -290,6 +300,14 @@ Instead of:
 * Quick Tunnels generate temporary domains
 
 * Not suitable for long-term use
+
+## 🧭 Final Architecture Summary
+
+Public Access:
+* User → Cloudflare Tunnel / Reverse Proxy → Jellyfin (Docker) → Local Network
+
+Private Access:
+* User → WireGuard VPN → Home Network → Jellyfin
 
 ## 📅 WireGuard VPN:
 
@@ -556,14 +574,14 @@ This lab simulates how ISPs:
 * Prevent network congestion
 * Ensure fair usage among multiple users
 
-### 🧩 Lab Topology
+### 🧩 *Lab Topology:*
 * One router acts as the gateway/router
 * Multiple clients share the same internet connection
 * Traffic is controlled using queues
 
 All configurations were tested using MikroTik RouterOS (CHR) in a virtual lab.
 
-### ⚙️ What Was Configured
+### ⚙️ *What Was Configured:*
 🔹 Simple Queue
 * Bandwidth limits per user/device
 * Upload and download control
@@ -577,7 +595,7 @@ All configurations were tested using MikroTik RouterOS (CHR) in a virtual lab.
 * Max limit configuration
 * Queue hierarchy (basic)
 
-### 📂 Configuration Files
+### 📂 *Configuration Files:*
 
 The following configuration files are included:
 
@@ -588,3 +606,26 @@ The following configuration files are included:
 → PCQ.rsc — PCQ configuration
 
 These files can be imported into RouterOS to replicate the lab.
+
+## 📚 Key Learnings
+
+- Risks of exposing services using port forwarding
+- Importance of HTTPS and SSL/TLS certificates
+- Practical use of reverse proxies in real deployments
+- Difference between public exposure vs private VPN access
+- Hands-on experience with ISP concepts using MikroTik (PPP, VPN, QoS)
+
+## ✅ Conclusion
+
+This project started as a simple media server setup but evolved into a practical exploration of secure service exposure and real-world networking concepts.
+
+It helped me understand how production-like systems are designed, secured, and accessed — similar to real NOC and ISP environments.
+
+I plan to continue improving this setup by exploring more advanced security, automation, and scalable infrastructure.
+
+
+
+## 👤 Author
+
+Dhrubo Ratul Basak,
+Computer Engineering Graduate | Networking & AI Enthusiast
